@@ -47,7 +47,7 @@ def display_all_products(dff):
                 for i in range(0, len(all_image_urls), images_per_col):
                     cols = st.columns(images_per_col)
                     for col, image_url in zip(cols, all_image_urls[i:i+images_per_col]):
-                        col.image(image_url, use_column_width=True)
+                        col.image(image_url, use_container_width=True)
             
                 
             
