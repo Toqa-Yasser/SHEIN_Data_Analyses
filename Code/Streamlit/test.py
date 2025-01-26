@@ -54,8 +54,11 @@ def display_all_products(dff):
     except:
         pass
         
-        
-df=pd.read_csv('Shein_clean.csv')
+@st.cache_data        
+def load_csv:
+        return pd.read_csv(BytesIO(requests.get('https://raw.githubusercontent.com/Toqa-Yasser/SHEIN_Data_Analyses/refs/heads/main/Code/Streamlit/Shein_clean.csv').content))
+
+df=load_csv()
 
 st.title('SHEIN Product Analysis ')
 st.sidebar.title('Category')
