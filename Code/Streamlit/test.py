@@ -55,7 +55,7 @@ def display_all_products(dff):
         pass
         
 @st.cache_data        
-def load_csv:
+def load_csv():
         return pd.read_csv(BytesIO(requests.get('https://raw.githubusercontent.com/Toqa-Yasser/SHEIN_Data_Analyses/refs/heads/main/Code/Streamlit/Shein_clean.csv').content))
 
 df=load_csv()
