@@ -2,9 +2,13 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
+import requests
+from io import BytesIO
 
-with open('./window-shopping-animate.svg', 'r') as file:
-        svg_content = file.read()
+@st.cache_data
+def load_svg(): 
+        return requests.get('https://raw.githubusercontent.com/Toqa-Yasser/SHEIN_Data_Analyses/refs/heads/main/Code/Streamlit/window-shopping-animate.svg').content.decode('utf-8')
+svg_content = load_svg()
 st.markdown(f"<div style='width: 300px; height: 300px; align: center'>{svg_content}</div>", unsafe_allow_html=True)
 
 def display_all_products(dff):
